@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    >
+
+    <item
+        android:id="@+id/bottom_navigation_posts"
+        android:enabled="true"
+        android:icon="@drawable/ic_icon_posts"
+        android:title="@string/posts" />
+    <item
+        android:id="@+id/bottom_navigation_events"
+        android:enabled="true"
+        android:icon="@drawable/ic_icon_events"
+        android:title="@string/events" />
+    <item
+        android:id="@+id/bottom_navigation_users"
+        android:enabled="true"
+        android:icon="@drawable/ic_icon_users"
+        android:title="@string/users" />
+
+
+</menu>
+

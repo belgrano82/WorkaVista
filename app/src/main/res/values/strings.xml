@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">WorkaVista</string>
+    <string name="app_name" translatable="false">WorkaVista</string>
+    <string name="menu_button">Menu button</string>
+    <string name="button_play_audio">Button play audio</string>
+    <string name="button_play_video">Button play video</string>
+    <string name="like_button">Like button</string>
+    <string name="share_button">Share button</string>
+    <string name="post_image">Post image</string>
+    <string name="posts">Posts</string>
+    <string name="events">Events</string>
+    <string name="users">Users</string>
+    <string name="user_menu">User menu</string>
+    <string name="page_title" translatable="false">WorkaVista</string>
+    <string name="content_description_appbar">App top bar</string>
 </resources>
