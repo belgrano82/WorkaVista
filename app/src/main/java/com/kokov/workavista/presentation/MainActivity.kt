@@ -2,51 +2,34 @@ package com.kokov.workavista.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.kokov.workavista.R
-import com.kokov.workavista.presentation.event.EventFragment
-import com.kokov.workavista.presentation.post.PostFragment
-import com.kokov.workavista.presentation.user.UserFragment
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val bottomNavigationView: BottomNavigationView = findViewById(R.id.navigation)
+        val host: NavHostFragment = supportFragmentManager
+            .findFragmentById(R.id.nav_host_fragment) as NavHostFragment? ?: return
 
+        val navController = host.navController
 
-        bottomNavigationView.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.bottom_navigation_posts -> {
-                    loadFragment(PostFragment())
-                    return@setOnItemSelectedListener true
-                }
-
-                R.id.bottom_navigation_events -> {
-                    loadFragment(EventFragment())
-                    return@setOnItemSelectedListener true
-                }
-
-                R.id.bottom_navigation_users -> {
-                    loadFragment(UserFragment())
-                    return@setOnItemSelectedListener true
-                }
-
-                else -> return@setOnItemSelectedListener false
-            }
-        }
+        setupBottomNavMenu(navController)
 
     }
-
-    private fun loadFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.nav_host_fragment, fragment)
-            .commit()
+    private fun setupBottomNavMenu(navController: NavController) {
+        val bottomNavMenu = findViewById<BottomNavigationView>(R.id.bottom_navigation_menu)
+        bottomNavMenu?.setupWithNavController(navController)
     }
 
 }
+
+
+
 
 
 

@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
 
     android:id="@+id/nav_main"
-    app:startDestination="@id/postFragment">
+    app:startDestination="@id/postsFragment">
 
     <fragment
-        android:id="@+id/postFragment"
+        android:id="@+id/postsFragment"
         android:name="com.kokov.workavista.presentation.post.PostFragment"
         android:label="PostFragment"
         tools:layout="@layout/fragment_posts"/>
